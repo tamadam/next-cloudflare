@@ -1,3 +1,5 @@
+// STATIC RENDERING - REVALIDATION NEVER HAPPENS
+
 import styles from "./page.module.css"
 
 interface Product {
@@ -8,8 +10,6 @@ interface Product {
 interface ProductsResponse {
   products: Product[];
 }
-
-export const dynamic = "force-dynamic";
 
 const ProductsPage = async () => {
   const res = await fetch("https://dummyjson.com/products");
