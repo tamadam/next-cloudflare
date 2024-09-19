@@ -1,6 +1,8 @@
 // STATIC RENDERING - REVALIDATE AFTER X SEC (DEFINED BELOW)
 // ALSO CALLED Incremental Static Regeneration
 
+export const runtime = 'edge'
+
 export const revalidate = 10; // revalidate after 10 sec
 
 const ContentPage = async () => {    
