@@ -5,6 +5,10 @@ import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev';
 // https://github.com/cloudflare/next-on-pages/blob/main/internal-packages/next-dev/README.md
 if (process.env.NODE_ENV === 'development') {
   await setupDevPlatform();
+
+  // without this it throws 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' on the products page and for the google fonts
+  // on prod it works fine without this
+  process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 }
 
 /** @type {import('next').NextConfig} */
