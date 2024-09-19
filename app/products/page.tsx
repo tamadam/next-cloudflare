@@ -9,6 +9,8 @@ interface ProductsResponse {
   products: Product[];
 }
 
+export const dynamic = "force-dynamic";
+
 const ProductsPage = async () => {
   const res = await fetch("https://dummyjson.com/products");
   const data: ProductsResponse = await res.json();

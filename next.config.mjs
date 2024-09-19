@@ -8,6 +8,7 @@ if (process.env.NODE_ENV === 'development') {
 
   // without this it throws 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' on the products page and for the google fonts
   // on prod it works fine without this
+  // the build is still fails on local machine
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 }
 
