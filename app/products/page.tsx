@@ -1,3 +1,5 @@
+import styles from "./page.module.css"
+
 interface Product {
   id: number;
   title: string;
@@ -13,7 +15,7 @@ const ProductsPage = async () => {
   const products: Product[] = data.products;
   
   return (
-    <div>ProductsPage
+    <div className={styles.productsPage}>ProductsPage
       <ul>
         {products.map(product => (
           <li key={product.id}>{product.title}</li>
