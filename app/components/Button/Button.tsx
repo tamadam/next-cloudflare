@@ -4,7 +4,7 @@ import styles from "./Button.module.css";
 
 interface ButtonProps {
   label: string;
-  type: "submit" | "button";
+  type?: "submit" | "button";
   onClick?: () => void;
 }
 

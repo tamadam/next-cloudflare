@@ -1,7 +1,8 @@
-// STATIC RENDERING - REVALIDATE AFTER X SEC (DEFINED BELOW)
+// STATIC RENDERING - WITHOUT EDGE RUNTIME
+// WITH EDGE RUNTIME IT FETCHES THE ENDPOINT ON EVERY REFRESH
+// REVALIDATION NOT WORKS AS EXPEXTED
 // ALSO CALLED Incremental Static Regeneration
 // ITS NOT SUPPORTED WHEN USING EDGE RUNTIME
-//
 
 import RandomText from "./components/RandomText/RandomText";
 
@@ -10,9 +11,9 @@ export const revalidate = 10;
 export const runtime = "edge";
 
 const ContentPage = async () => {
-  const content = await fetch("https://whatthecommit.com/index.txt").then(
-    (response) => response.text()
-  );
+  const content = await fetch("https://whatthecommit.com/index.txt", {
+    next: { tags: ["content"] },
+  }).then((response) => response.text());
 
   return (
     <div>
