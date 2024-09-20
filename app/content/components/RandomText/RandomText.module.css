@@ -1,0 +1,4 @@
+.randomTextContainer {
+  display: grid;
+  place-items: center;
+}

@@ -3,16 +3,21 @@
 // ITS NOT SUPPORTED WHEN USING EDGE RUNTIME
 //
 
-export const revalidate = 10;
+import RandomText from "./components/RandomText/RandomText";
 
-export const runtime = "edge";
+export const revalidate = 10;
 
 const ContentPage = async () => {
   const content = await fetch("https://whatthecommit.com/index.txt").then(
     (response) => response.text()
   );
 
-  return <div>{content}</div>;
+  return (
+    <div>
+      <p>Content Page</p>
+      <RandomText text={content} />
+    </div>
+  );
 };
 
 export default ContentPage;
