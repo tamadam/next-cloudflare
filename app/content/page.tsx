@@ -7,6 +7,8 @@ import RandomText from "./components/RandomText/RandomText";
 
 export const revalidate = 10;
 
+export const runtime = "edge";
+
 const ContentPage = async () => {
   const content = await fetch("https://whatthecommit.com/index.txt").then(
     (response) => response.text()
