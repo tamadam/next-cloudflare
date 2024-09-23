@@ -11,7 +11,7 @@ interface UsersResponse {
 
 const UsersPage = async () => {
   const users: UsersResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/users`
+    `https://next-cloudflare-drl.pages.dev/api/users`
   ).then((response) => response.json());
 
   return (
