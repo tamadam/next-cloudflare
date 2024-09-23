@@ -18,13 +18,14 @@ const UsersPage = async () => {
 
   return (
     <div>
+      Env: {process.env.NEXT_PUBLIC_API_URL}
       Users:
       <ul>
         {users.users.map((user) => (
           <li key={user.id}>{user.username}</li>
         ))}
       </ul>
-      {/*  <UserForm /> */}
+      <UserForm />
     </div>
   );
 };

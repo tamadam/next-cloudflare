@@ -4,13 +4,16 @@ import Button from "@/app/components/Button/Button";
 
 const UserForm = () => {
   const saveUser = async () => {
-    const result = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id: 1, name: "test" }),
-    });
+    const result = await fetch(
+      `https://next-cloudflare-drl.pages.dev/api/users`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id: 1, name: "test" }),
+      }
+    );
 
     console.log(await result.json());
   };
