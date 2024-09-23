@@ -9,8 +9,6 @@ interface UsersResponse {
   users: User[];
 }
 
-export const runtime = "edge";
-
 const UsersPage = async () => {
   const users: UsersResponse = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/users`
