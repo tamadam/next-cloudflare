@@ -13,7 +13,7 @@ export const runtime = "edge";
 
 const UsersPage = async () => {
   const users: UsersResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/users`
+    `https://next-cloudflare-drl.pages.dev/api/users`
   ).then((response) => response.json());
 
   return (
@@ -24,7 +24,7 @@ const UsersPage = async () => {
           <li key={user.id}>{user.username}</li>
         ))}
       </ul>
-      <UserForm />
+      {/*  <UserForm /> */}
     </div>
   );
 };
